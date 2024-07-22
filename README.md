@@ -35,7 +35,7 @@ classDiagram
   }
 
   User "1" *-- "1" BankAccount
-  User "1" *-- "*" Feature
+  User "1" *-- "N" Feature
   User "1" *-- "1" CreditCard
-  User "1" *-- "*" NewsItem
+  User "1" *-- "N" NewsItem
 ```
