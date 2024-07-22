@@ -1,13 +1,26 @@
 package me.dio.domain;
 
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 
+@Entity(name = "tb_account")
 public class Account {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(unique = true)
     private String number;
+
     private String agency;
+
+    @Column(precision = 2, scale = 11)
     private BigDecimal balance;
-    private BigDecimal getBalance;
+
+    @Column(name = "addicioal_limit",precision = 2, scale = 11)
+    private BigDecimal limit;
 
     public Long getId() {
         return id;
@@ -41,11 +54,9 @@ public class Account {
         this.balance = balance;
     }
 
-    public BigDecimal getGetBalance() {
-        return getBalance;
-    }
+    public BigDecimal getLimit() {return limit;}
 
-    public void setGetBalance(BigDecimal getBalance) {
-        this.getBalance = getBalance;
+    public void setLimit(BigDecimal limit) {
+        this.limit = limit;
     }
 }
