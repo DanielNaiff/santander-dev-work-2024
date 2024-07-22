@@ -1,4 +1,8 @@
 # santander-dev-work-2024
+
+##Diagrama de Classe
+
+'''mermaid
 classDiagram
   class User {
     - String name
@@ -34,3 +38,4 @@ classDiagram
   User "1" *-- "*" Feature
   User "1" *-- "1" CreditCard
   User "1" *-- "*" NewsItem
+'''
